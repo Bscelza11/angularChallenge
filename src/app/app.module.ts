@@ -7,6 +7,9 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { LoginComponent } from './features/login/login.component';
 import { RegisterComponent } from './features/register/register.component';
 import { ProfileComponent } from './features/profile/profile.component';
+import { RandomMessagePipe } from './shared/random-message.pipe';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { authenticationService } from './core/authentication.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +17,12 @@ import { ProfileComponent } from './features/profile/profile.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    RandomMessagePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [RandomMessagePipe],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  providers: [authenticationService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
