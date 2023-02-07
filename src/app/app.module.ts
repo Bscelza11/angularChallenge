@@ -10,6 +10,12 @@ import { ProfileComponent } from './features/profile/profile.component';
 import { RandomMessagePipe } from './shared/random-message.pipe';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { authenticationService } from './core/authentication.service';
+import { PostCardComponent } from './shared/card-templates/post-card/post-card.component';
+import { ProductCardComponent } from './shared/card-templates/product-card/product-card.component';
+import { QuoteCardComponent } from './shared/card-templates/quote-card/quote-card.component';
+import { GalleryComponent } from './features/profile/gallery/gallery.component';
+import { ServiceHomeService } from './features/profile/home-service.service';
+import { adDirective } from './shared/ad.directive';
 
 @NgModule({
   declarations: [
@@ -19,10 +25,15 @@ import { authenticationService } from './core/authentication.service';
     RegisterComponent,
     ProfileComponent,
     RandomMessagePipe,
+    PostCardComponent,
+    ProductCardComponent,
+    QuoteCardComponent,
+    GalleryComponent,
+    adDirective,
   ],
   exports: [RandomMessagePipe],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
-  providers: [authenticationService],
+  providers: [authenticationService, ServiceHomeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
