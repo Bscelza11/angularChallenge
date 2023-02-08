@@ -10,10 +10,10 @@ import { authenticationService } from 'src/app/core/authentication.service';
 })
 export class RegisterComponent {
   formRegister = new FormGroup({
-    email: new FormControl(''),
-    userName: new FormControl(''),
-    newPassword: new FormControl(''),
-    confirmPassword: new FormControl(''),
+    email: new FormControl(),
+    userName: new FormControl(),
+    newPassword: new FormControl(),
+    confirmPassword: new FormControl(),
   });
 
   constructor(

@@ -3,7 +3,7 @@ import { Directive, ViewContainerRef } from '@angular/core';
 @Directive({
   selector: '[adHost]',
 })
-export class adDirective {
+export class AdDirective {
   static viewContainerRef: any;
   constructor(public viewContainerRef: ViewContainerRef) {}
 }

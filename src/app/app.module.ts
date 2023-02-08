@@ -13,9 +13,10 @@ import { authenticationService } from './core/authentication.service';
 import { PostCardComponent } from './shared/card-templates/post-card/post-card.component';
 import { ProductCardComponent } from './shared/card-templates/product-card/product-card.component';
 import { QuoteCardComponent } from './shared/card-templates/quote-card/quote-card.component';
-import { GalleryComponent } from './features/profile/gallery/gallery.component';
-import { ServiceHomeService } from './features/profile/home-service.service';
-import { adDirective } from './shared/ad.directive';
+import { GalleryComponent } from './features/home/gallery/gallery.component';
+import { ServiceHomeService } from './features/home/home-service.service';
+import { AdDirective } from './features/home/Ad.directive';
+import { HomeComponent } from './features/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { adDirective } from './shared/ad.directive';
     ProductCardComponent,
     QuoteCardComponent,
     GalleryComponent,
-    adDirective,
+    AdDirective,
+    HomeComponent,
   ],
   exports: [RandomMessagePipe],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],

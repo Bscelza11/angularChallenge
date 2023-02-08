@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AdComponent } from '../../ad.component';
+import { AdComponent } from '../../Ad.component';
 
 @Component({
   selector: 'app-quote-card',

@@ -10,8 +10,8 @@ import { authenticationService } from 'src/app/core/authentication.service';
 })
 export class LoginComponent {
   loginForm = new FormGroup({
-    user: new FormControl(''),
-    password: new FormControl(''),
+    user: new FormControl(),
+    password: new FormControl(),
   });
 
   constructor(
