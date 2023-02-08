@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceHomeService } from './home-service.service';
-import { CardItem } from 'src/app/features/home/CardItem.model';
+import { CardItem } from 'src/app/shared/cardItem.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

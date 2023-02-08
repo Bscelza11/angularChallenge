@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { AdComponent } from 'src/app/shared/Ad.component';
-import { AdDirective } from 'src/app/features/home/Ad.directive';
+import { AdDataCard } from 'src/app/shared/adData.component';
+import { CardHostDirective } from 'src/app/shared/cardHost.directive';
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +10,7 @@ import { AdDirective } from 'src/app/features/home/Ad.directive';
 export class GalleryComponent implements OnInit {
   @Input() adCards: any;
 
-  @ViewChild(AdDirective, { static: true }) adHost!: AdDirective;
+  @ViewChild(CardHostDirective, { static: true }) adHost!: CardHostDirective;
 
   constructor() {}
 
@@ -18,7 +18,7 @@ export class GalleryComponent implements OnInit {
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
 
-    const componentRef = viewContainerRef.createComponent<AdComponent>(
+    const componentRef = viewContainerRef.createComponent<AdDataCard>(
       this.adCards.component
     );
     componentRef.instance.data = this.adCards.data;

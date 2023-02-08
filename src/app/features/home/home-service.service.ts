@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PostCardComponent } from 'src/app/shared/card-templates/post-card/post-card.component';
 import { ProductCardComponent } from 'src/app/shared/card-templates/product-card/product-card.component';
 import { QuoteCardComponent } from 'src/app/shared/card-templates/quote-card/quote-card.component';
-import { CardItem } from 'src/app/features/home/CardItem.model';
+import { CardItem } from 'src/app/shared/cardItem.model';
 
 @Injectable({
   providedIn: 'root',

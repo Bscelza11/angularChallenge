@@ -15,8 +15,8 @@ import { ProductCardComponent } from './shared/card-templates/product-card/produ
 import { QuoteCardComponent } from './shared/card-templates/quote-card/quote-card.component';
 import { GalleryComponent } from './features/home/gallery/gallery.component';
 import { ServiceHomeService } from './features/home/home-service.service';
-import { AdDirective } from './features/home/Ad.directive';
 import { HomeComponent } from './features/home/home.component';
+import { CardHostDirective } from './shared/cardHost.directive';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { HomeComponent } from './features/home/home.component';
     ProductCardComponent,
     QuoteCardComponent,
     GalleryComponent,
-    AdDirective,
     HomeComponent,
+    CardHostDirective,
   ],
   exports: [RandomMessagePipe],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
