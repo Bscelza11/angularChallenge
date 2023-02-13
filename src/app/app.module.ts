@@ -13,6 +13,8 @@ import { authenticationService } from './core/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionnarieComponent } from './features/questionnarie/questionnarie.component';
 import { LoginComponent } from './features/login/login.component';
+import { DynamicFormDataComponent } from './shared/dynamic-form-data/dynamic-form-data.component';
+import { DynamicFormComponent } from './shared/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { LoginComponent } from './features/login/login.component';
     RandomMessagePipe,
     QuestionnarieComponent,
     LoginComponent,
+    DynamicFormDataComponent,
+    DynamicFormComponent,
   ],
   exports: [RandomMessagePipe],
   imports: [

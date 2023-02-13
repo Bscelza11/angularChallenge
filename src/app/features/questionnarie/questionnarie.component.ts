@@ -1,60 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-questionnarie',
   templateUrl: './questionnarie.component.html',
   styleUrls: ['./questionnarie.component.css'],
 })
-export class QuestionnarieComponent {
-  jsonFormDataDetails: any;
-  jsonFormDataAddress: any;
-
-  detailsForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    age: new FormControl(''),
-    comments: new FormControl(''),
-    greeTerms: new FormControl(false),
-  });
-
-  addressForm = new FormGroup({
-    address1: new FormControl(''),
-    address2: new FormControl(''),
-    city: new FormControl(''),
-    country: new FormControl('Uruguay'),
-    zipcode: new FormControl(''),
-  });
+export class QuestionnarieComponent implements OnInit {
+  controls: any;
 
   constructor(private http: HttpClient) {}
 
-  toggleCheckbox() {
-    this.detailsForm.patchValue({
-      greeTerms: !this.detailsForm.get('greeTerms')?.value,
-    });
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.http
       .get('/assets/questionnarie/user-details.json')
       .subscribe((FormData: any) => {
-        this.jsonFormDataDetails = FormData;
-        console.log(FormData);
+        this.controls = FormData;
       });
 
     this.http
       .get('/assets/questionnarie/user-adress.json')
       .subscribe((FormData: any) => {
-        this.jsonFormDataAddress = FormData;
+        this.controls = FormData;
       });
-  }
-
-  submitDetailsForm() {
-    console.log(this.detailsForm.value);
-  }
-
-  onSubmit() {
-    console.log(this.addressForm.value);
   }
 }

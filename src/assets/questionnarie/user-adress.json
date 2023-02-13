@@ -4,8 +4,7 @@
       "name": "address1",
       "label": "Address line 1:",
       "value": "",
-      "type": "text",
-      "class": "form-control"
+      "type": "text"
     },
     {
       "name": "address2",
