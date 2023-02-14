@@ -1,6 +1,6 @@
 <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <ng-container *ngFor="let control of controls">
-    <div class="form-group mt-2">
+    <div class="form-group m-2">
       <label class="block mt-6" for="{{ control.name }}">{{
         control.label
       }}</label>
@@ -46,5 +46,7 @@
     </div>
   </ng-container>
 
-  <button type="submit" [disabled]="!form.valid">Submit</button>
+  <button type="submit" class="btn btn-success m-2" [disabled]="!form.valid">
+    Submit
+  </button>
 </form>

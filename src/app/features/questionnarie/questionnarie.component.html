@@ -1,8 +1,10 @@
-<div *ngIf="userControls">
-  <h1>Details</h1>
-  <app-dynamic-form [jsonFormData]="userControls"></app-dynamic-form>
-</div>
-<div *ngIf="addressControls">
-  <h1>Address</h1>
-  <app-dynamic-form [jsonFormData]="addressControls"></app-dynamic-form>
+<div class="d-flex justify-content-center">
+  <div *ngIf="userControls" class="col-4">
+    <h1>Details</h1>
+    <app-dynamic-form [jsonFormData]="userControls"></app-dynamic-form>
+  </div>
+  <div *ngIf="addressControls" class="col-4">
+    <h1>Address</h1>
+    <app-dynamic-form [jsonFormData]="addressControls"></app-dynamic-form>
+  </div>
 </div>
