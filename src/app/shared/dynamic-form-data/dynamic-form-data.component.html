@@ -1,0 +1,46 @@
+<ng-container *ngFor="let control of controls">
+  <div class="form-group mt-2">
+    <label class="block mt-6" for="{{ control.name }}">{{
+      control.label
+    }}</label>
+    <input
+      *ngIf="
+        ['text', 'password', 'email', 'number', 'tel', 'url'].includes(
+          control.type
+        )
+      "
+      [type]="control.type"
+      [formControlName]="control.name"
+      [value]="control.value"
+      class="form-control border-success"
+    />
+    <div>
+      <input
+        *ngIf="control.type === 'checkbox'"
+        [type]="control.type"
+        [formControlName]="control.name"
+        [value]="control.value"
+        class="form-check-input align-items-start border-success"
+      />
+    </div>
+    <textarea
+      *ngIf="control.type === 'textarea'"
+      [formControlName]="control.name"
+      [value]="control.value"
+      class="form-control border-success"
+    ></textarea>
+    <select
+      *ngIf="control.type === 'select'"
+      [formControlName]="control.name"
+      [value]="control.value"
+      class="form-control border-success"
+    >
+      <option
+        *ngFor="let option of control.options; let i = index"
+        [value]="option"
+      >
+        {{ option }}
+      </option>
+    </select>
+  </div>
+</ng-container>
