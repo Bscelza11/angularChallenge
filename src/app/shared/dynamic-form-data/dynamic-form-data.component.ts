@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -9,4 +9,9 @@ import { FormGroup } from '@angular/forms';
 export class DynamicFormDataComponent {
   @Input() controls: any;
   @Input() form: FormGroup | undefined;
+  @Output() onFormSubmit = new EventEmitter();
+
+  onSubmit() {
+    this.onFormSubmit.emit(this.form?.value);
+  }
 }

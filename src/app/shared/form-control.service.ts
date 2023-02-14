@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ControlBaseModel } from './controlBase';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormControlService {
-  public myform: FormGroup = this.fb.group({});
-
   constructor(private fb: FormBuilder) {}
 
-  formGroup(control: any) {
-    control.forEach((control: any) => {
-      this.myform.addControl(control.name, this.fb.control(control.value));
-    });
+  createForm(controls: ControlBaseModel[]) {
+    let form: FormGroup = this.fb.group({});
+    for (const control of controls) {
+      form.addControl(control.name, this.fb.control(control.value));
+    }
 
-    return this.myform;
+    return form;
   }
 }

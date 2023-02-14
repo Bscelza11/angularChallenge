@@ -1,23 +1,11 @@
-export class ControlBase<T> {
-  value: T | undefined;
+export interface ControlBaseModel {
+  name: string;
   label: string;
-  required: boolean;
+  value: string;
   type: string;
-  options: { value: string }[];
+  options: string[];
+}
 
-  constructor(
-    options: {
-      value?: T;
-      label?: string;
-      required?: boolean;
-      type?: string;
-      options?: { key: string; value: string }[];
-    } = {}
-  ) {
-    this.value = options.value;
-    this.label = options.label || '';
-    this.required = !!options.required;
-    this.type = options.type || '';
-    this.options = options.options || [];
-  }
+export interface ControlsModel {
+  controls: ControlBaseModel[];
 }

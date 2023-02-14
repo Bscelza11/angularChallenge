@@ -1,13 +1,7 @@
 <div>
-  <form [formGroup]="myform">
-    <div *ngFor="let control of controls" class="form-control">
-      <app-dynamic-form-data
-        [controls]="controls"
-        [form]="myform"
-      ></app-dynamic-form-data>
-    </div>
-    <div class="form-control">
-      <button type="submit">Send</button>
-    </div>
-  </form>
+  <app-dynamic-form-data
+    [controls]="jsonFormData?.controls"
+    [form]="myform"
+    (onFormSubmit)="onSubmit($event)"
+  ></app-dynamic-form-data>
 </div>

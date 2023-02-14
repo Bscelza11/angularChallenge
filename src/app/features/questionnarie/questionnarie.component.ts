@@ -7,21 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questionnarie.component.css'],
 })
 export class QuestionnarieComponent implements OnInit {
-  controls: any;
+  userControls: any;
+  addressControls: any;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.http
       .get('/assets/questionnarie/user-details.json')
-      .subscribe((FormData: any) => {
-        this.controls = FormData;
+      .subscribe((formData: any) => {
+        this.userControls = formData;
       });
 
     this.http
       .get('/assets/questionnarie/user-adress.json')
-      .subscribe((FormData: any) => {
-        this.controls = FormData;
+      .subscribe((formData: any) => {
+        this.addressControls = formData;
       });
   }
 }

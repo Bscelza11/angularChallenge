@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ControlsModel } from '../controlBase';
 import { FormControlService } from '../form-control.service';
 
 @Component({
@@ -8,14 +9,18 @@ import { FormControlService } from '../form-control.service';
   styleUrls: ['./dynamic-form.component.css'],
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() controls: any[] = [];
+  @Input() jsonFormData: ControlsModel | undefined;
   myform!: FormGroup;
 
   constructor(private formService: FormControlService) {}
 
   ngOnInit() {
-    this.myform = this.formService.formGroup(this.controls);
+    if (this.jsonFormData?.controls) {
+      this.myform = this.formService.createForm(this.jsonFormData.controls);
+    }
   }
 
-  onSubmit() {}
+  onSubmit(values: any) {
+    console.log(values);
+  }
 }
