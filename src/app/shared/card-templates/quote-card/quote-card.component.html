@@ -5,7 +5,9 @@
         <em> {{ data.description }} </em>
       </p>
       <p class="text-center">
-        <small class="text-primary">{{ data.author }}</small>
+        <a class="nav-link" [routerLink]="['/cards', data.id]"
+          ><small class="text-primary">{{ data.author }}</small></a
+        >
       </p>
     </div>
   </div>
