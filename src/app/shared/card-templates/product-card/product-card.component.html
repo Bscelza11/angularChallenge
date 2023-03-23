@@ -5,7 +5,11 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ data.title }}</h5>
+        <h5 class="card-title">
+          <a class="nav-link" [routerLink]="['/cards', data.id]">{{
+            data.title
+          }}</a>
+        </h5>
         <p class="card-text text-muted">{{ data.description }}</p>
         <p class="card-text fs-3">
           <small class="text-primary"> $ {{ data.price }}</small>
