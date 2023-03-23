@@ -17,6 +17,7 @@ import { GalleryComponent } from './features/home/gallery/gallery.component';
 import { ServiceHomeService } from './features/home/home-service.service';
 import { HomeComponent } from './features/home/home.component';
 import { CardHostDirective } from './shared/cardHost.directive';
+import { CardDetailComponent } from './features/home/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CardHostDirective } from './shared/cardHost.directive';
     GalleryComponent,
     HomeComponent,
     CardHostDirective,
+    CardDetailComponent,
   ],
   exports: [RandomMessagePipe],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],

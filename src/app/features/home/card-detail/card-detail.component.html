@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center">
+  <div class="col-6 justify-content-center">
+    <h1 class="m-3 text-center">{{ cardItem.data.title }}</h1>
+    <img img src="{{ cardItem.data.img }}" class="float-start col-2 ms-md-3" />
+    <p class="text-center">{{ cardItem.data.description }}</p>
+    <div>
+      <p class="text-center">
+        <em class="text-primary">
+          {{ cardItem.data.author }}
+        </em>
+      </p>
+      <p class="text-primary text-center">
+        <small>{{ cardItem.data.date }}</small>
+      </p>
+    </div>
+
+    <h2 class="text-primary text-center">
+      {{ cardItem.data.price }}
+    </h2>
+  </div>
+</div>
